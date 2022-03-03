@@ -16,21 +16,33 @@ describe('sum', () => {
     expect(actual).toBe(expected);
   });
 
-  test.skip('can add two large positive numbers', () => { 
-    
+  test('can add two large positive numbers', () => { 
+    expected= 1_000_000;
+    actual = sum (500_000, 500_000);
+    expect(actual).toBe(expected);
   });
 
-  test.skip('can add two negative numbers', () => {
-    
+  test('can add two negative numbers', () => {
+    expected = -5;
+    actual = sum(-2, -3);
+    expect(actual).toBe(expected);
   });
 
-  test.skip('can add zero', () => {
-    
+  test('can add zero', () => {
+    expected = 5;
+    actual = sum(5, 0);
+    expect(actual).toBe(expected);
   });
 
 });
 
 describe('subtract', () => {
+
+  test('can subtract two small positive numbers', () => {
+    expected = 5;
+    actual = subtract(8,3);
+    expect (actual).toBe(expected);
+  })
 
 });
 
