@@ -48,13 +48,80 @@ describe('subtract', () => {
 
 describe('multiply', () => {
 
+  test('can multiply two small positive numbers', () => {
+    expected = 10;
+    actual = multiply(2,5);
+    expect (actual).toBe(expected);
+  })
+
+  test('can multiply two large positive numbers', () => {
+    expected = 1_000_000_000;
+    actual = multiply(20_000,50_000);
+    expect (actual).toBe(expected);
+  })
+
+  test('can multiply two negative numbers', () => {
+    expected = 10;
+    actual = multiply(-2,-5);
+    expect (actual).toBe(expected);
+  })
+
+  test('can multiply by zero', () => {
+    expected = 0;
+    actual = multiply(5, 0);
+    expect(actual).toBe(expected);
+  });
+
 });
 
 describe('divide', () => {
 
+    test('can divide two small positive numbers', () => {
+      actual = 2;
+      expected = divide(10, 5);
+      expect(actual).toBe(expected);
+    })
+
+    test('can divide two large positive numbers', () => {
+      actual = 20_000;
+      expected = divide(1_000_000_000, 50_000);
+      expect(actual).toBe(expected);
+    })
+
+    test('can divide two small negative numbers', () => {
+      actual = 2;
+      expected = divide(-10, -5);
+      expect(actual).toBe(expected);
+    })
+
+    // test('can divide by 0', () => {
+    //   actual = Infinity;
+    //   expected = divide(10, 0);
+    //   expect(actual).toBe(expected);
+    // })
+
 });
 
 describe('modulus', () => {
+ 
+  test('can get remainder of two small positive numbers', () =>{
+    actual = 1;
+    expected = modulus(10, 3);
+    expect(actual).toBe(expected);
+  })
+
+  test('can get remainder of two large positive numbers', () =>{
+    actual = 1_000_000;
+    expected = modulus(10_000_000, 3000_000);
+    expect(actual).toBe(expected);
+  })
+
+  test('can get remainder of two negative numbers', () =>{
+    actual = -1;
+    expected = modulus(-10, -3);
+    expect(actual).toBe(expected);
+  })
+
 
 });
 
