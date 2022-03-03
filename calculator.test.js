@@ -44,6 +44,25 @@ describe('subtract', () => {
     expect (actual).toBe(expected);
   })
 
+  test('can subtract two large positive numbers', () => {
+    expected = 500_000;
+    actual = subtract(1_000_000, 500_000);
+    expect (actual).toBe(expected);
+  })
+
+  test('can subtract two negative numbers', () => {
+    expected = -5;
+    actual = subtract(-8,-3);
+    expect (actual).toBe(expected);
+  })
+
+  test('can subtract zero', () => {
+    expected = 5;
+    actual = subtract(5, 0);
+    expect (actual).toBe(expected);
+  })
+
+
 });
 
 describe('multiply', () => {
@@ -127,8 +146,44 @@ describe('modulus', () => {
 
 describe('even', () => {
 
+  test('can return true for small positive even numbers', () => {
+    actual = true;
+    expected = even(6);
+    expect (actual).toBe (expected);
+  })
+
+  test('can return true for large positive numbers', () => {
+    actual = true;
+    expected = even(1_000_000_000);
+    expect (actual).toBe (expected);
+  })
+
+  test('can return true for negative numbers',() => {
+    actual=true;
+    expected = even (-6);
+    expect (actual).toBe(expected);
+  })
+  
 });
 
 describe('odd', () => {
+
+  test('can return true for small positive numbers', () => {
+    actual=true;
+    expected = odd (7);
+    expect (actual).toBe (expected);
+  })
+
+  test('can return true for large positive numbers', () => {
+    actual=true;
+    expected = odd (1_000_000_001);
+    expect (actual).toBe (expected);
+  })
+
+  test('can return true for negative numbers', () => {
+    actual=true;
+    expected = odd (-7);
+    expect (actual).toBe (expected);
+  })
 
 });
